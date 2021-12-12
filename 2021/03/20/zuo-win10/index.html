@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yyxi.ml","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="白嫖win10专业版 激活工具成功激活为win10企业版 作死打开hyper-v不兼容而导致vbox报错0x80004005 解决问题的故事">
+<meta property="og:type" content="article">
+<meta property="og:title" content="拿win10作死的故事">
+<meta property="og:url" content="https://yyxi.ml/2021/03/20/zuo-win10/index.html">
+<meta property="og:site_name" content="A Mirror的博客">
+<meta property="og:description" content="白嫖win10专业版 激活工具成功激活为win10企业版 作死打开hyper-v不兼容而导致vbox报错0x80004005 解决问题的故事">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yyxi.ml/2021/03/20/zuo-win10/zuo-win10.assets/b918d2c3c42ce16d5b7ffee5b456885f.png">
+<meta property="og:image" content="https://yyxi.ml/2021/03/20/zuo-win10/zuo-win10.assets/ebcbc2e6182b33d29239347acaf78318.png">
+<meta property="og:image" content="https://yyxi.ml/2021/03/20/zuo-win10/zuo-win10.assets/8b4a303169e80d6f12baf9e2f0f35224.png">
+<meta property="og:image" content="https://yyxi.ml/2021/03/20/zuo-win10/zuo-win10.assets/abd1116d26e6ac0f260d04214b0a54f4.png">
+<meta property="og:image" content="https://yyxi.ml/2021/03/20/zuo-win10/zuo-win10.assets/8b4a303169e80d6f12baf9e2f0f35224.png">
+<meta property="article:published_time" content="2021-03-20T10:48:00.000Z">
+<meta property="article:modified_time" content="2021-03-20T10:48:00.000Z">
+<meta property="article:author" content="A Mirror">
+<meta property="article:tag" content="windows">
+<meta property="article:tag" content="白嫖">
+<meta property="article:tag" content="作死">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yyxi.ml/2021/03/20/zuo-win10/zuo-win10.assets/b918d2c3c42ce16d5b7ffee5b456885f.png">
+
+<link rel="canonical" href="https://yyxi.ml/2021/03/20/zuo-win10/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>拿win10作死的故事 | A Mirror的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">A Mirror的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">不许说话不许笑 [手动滑稽]</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://yyxi.ml/2021/03/20/zuo-win10/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="A Mirror">
+      <meta itemprop="description" content="来自某个中学生的博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="A Mirror的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          拿win10作死的故事
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-03-20 18:48:00" itemprop="dateCreated datePublished" datetime="2021-03-20T18:48:00+08:00">2021-03-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E7%B1%BB/" itemprop="url" rel="index"><span itemprop="name">技术类</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">白嫖win10专业版 激活工具成功激活为win10企业版 作死打开hyper-v不兼容而导致vbox报错0x80004005 解决问题的故事</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>买电脑送的正版win10家庭版，闲的没事找了个win10专业版的激活码，添加功能成功后，却显示未激活。激活后，直接成了企业版 [手动笑哭]</p>
+<h1 id="故事内容"><a href="#故事内容" class="headerlink" title="故事内容"></a>故事内容</h1><h2 id="1-白嫖win10专业版失败"><a href="#1-白嫖win10专业版失败" class="headerlink" title="1.白嫖win10专业版失败"></a>1.白嫖win10专业版失败</h2><p>背景是简单写了一下 </p>
+<p>一个朋友闲的没事干，到网上搜了一个win10专业版激活码，结果激活成功了。我就要来激活码，成功识别，显示需要重启增加功能。我就把设置放到了其他桌面，打算稍后重启更新。<strong>放心，激活码没用了，需要的可以尝试激活工具“大法”。激活码失效也是我翻车的原因。</strong><br>稍后重启更新是没有任何问题。但添加完功能后，莫名弹出了未激活的提示，<strong>直接翻车了</strong>（应该是激活次数被用完了吧）。当时因为着急，也没来得及截图。</p>
+<h2 id="2-尝试用激活工具解决问题"><a href="#2-尝试用激活工具解决问题" class="headerlink" title="2.尝试用激活工具解决问题"></a>2.尝试用激活工具解决问题</h2><p><img src="zuo-win10.assets/b918d2c3c42ce16d5b7ffee5b456885f.png" alt="激活结果"></p>
+<h2 id="3-作死部分-打开hyper-v"><a href="#3-作死部分-打开hyper-v" class="headerlink" title="3.作死部分 打开hyper-v"></a>3.作死部分 打开hyper-v</h2><p>本来是家庭版，看到早以前所谓的hyper-v虚拟机，很好奇。升级企业版后在Windows功能中，启用了此功能。hyper-v用了个寂寞，virtualbox（<em>以下简称“vbox”</em>）的虚拟机也打不开了，报错<code>0x80004005</code> ……<br><strong>完整报错是这样的</strong></p>
+<blockquote>
+<p>Call to WHvSetupPartition failed: ERROR_SUCCESS (Last=0xc000000d/87) (VERR_NEM_VM_CREATE_FAILED).<br>返回 代码: E_FAIL (0x80004005)<br>组件: ConsoleWrap<br>界面: IConsole {872da645-4a9b-1727-bee2-5585105b9eed}</p>
+</blockquote>
+<h2 id="4-解决vbox-0x80004005报错"><a href="#4-解决vbox-0x80004005报错" class="headerlink" title="4.解决vbox 0x80004005报错"></a>4.解决vbox 0x80004005报错</h2><p><strong>具体的我也无法说明哪一步有效，哪一步无效；有兴趣的可以自行尝试。如果我的方法不对症，请自行查阅其他资料。我已经把很多方法综合了。</strong></p>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>首先想到是vbox和hyper-v冲突。结果说明的确这样。<br>先看一张图，表示vbox和hyper-v的工作原理不同。这说明了导致冲突的原因：<br><img src="zuo-win10.assets/ebcbc2e6182b33d29239347acaf78318.png" alt="vbox和hyper-v冲突原因"></p>
+<hr>
+<h3 id="一个不对症的方法"><a href="#一个不对症的方法" class="headerlink" title="一个不对症的方法"></a>一个不对症的方法</h3><p>之后，搜索报错信息，看到了一篇文章，大意是没有打开对应功能，给出了如下操作：<br><img src="zuo-win10.assets/8b4a303169e80d6f12baf9e2f0f35224.png" alt="组件未打开的解决方法"><br>这只是导致此报错的原因之一。<strong>请注意，我并没有说明此方法没用，只是没有对症而已。</strong><br>我的两个功能本来就开着，所以我直接略过。</p>
+<hr>
+<h3 id="最基本的操作"><a href="#最基本的操作" class="headerlink" title="最基本的操作"></a>最基本的操作</h3><p>我在控制面版直接将hyper-v关闭，重启，问题仍然没有解决</p>
+<hr>
+<h3 id="尝试兼容运行模式"><a href="#尝试兼容运行模式" class="headerlink" title="尝试兼容运行模式"></a>尝试兼容运行模式</h3><p>之后，又尝试这个方法，<strong>但此方法仅支持vbox6.0及以上版本</strong>，可以<strong>暂时性解决</strong>。我这么说的原因是使用该方法后，我碰到另外一个问题：显示效果极差。而且，仅仅是vbox问题解决，安卓模拟器问题并没有解决。</p>
+<p>这个方法值得一试，不知是否适合。我同样写在这里：</p>
+<blockquote>
+<p>1.打开vbox目录，确认有<code>VBoxManage.exe</code><br>2.<strong>管理员身份</strong>（为防止兼容性问题）启用cmd或Windows Powershell，并cd到安装目录（不会的百度）<br><font color=orange><strong>注意：cmd和Windows Powershell的命令有细微差别</strong>。Windows Powershell需要加<code>\.</code>和<code>.exe</code><br><font color=black>3.如果碰到和我类似的问题，可以将其关闭。<strong>直接将参数0替换成1就好。</strong></p>
+</blockquote>
+<p><strong>cmd部分</strong><br>对指定虚拟机启用：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">VBoxManage setextradata &quot;&lt;虚拟机名字&gt;&quot; &quot;VBoxInternal/NEM/UseRing0Runloop&quot; 0</span><br></pre></td></tr></table></figure>
+<p>对所有虚拟机启用：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">VBoxManage setextradata global &quot;VBoxInternal/NEM/UseRing0Runloop&quot; 0</span><br></pre></td></tr></table></figure>
+<p><strong>Windows Powershell部分</strong><br>对指定虚拟机启用：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./VBoxManage.exe setextradata &quot;&lt;虚拟机名字&gt;&quot; &quot;VBoxInternal/NEM/UseRing0Runloop&quot; 0</span><br></pre></td></tr></table></figure>
+<p>对所有虚拟机启用：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./VBoxManage.exe setextradata global &quot;VBoxInternal/NEM/UseRing0Runloop&quot; 0</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="使用cmd命令行关闭"><a href="#使用cmd命令行关闭" class="headerlink" title="使用cmd命令行关闭"></a>使用cmd命令行关闭</h3><p>想到可能是没有彻底关闭（应该不会吧。。。就试试），尝试采用命令行操作。<br><strong>管理员身份运行cmd，输入对应命令</strong></p>
+<p>关闭hyper-v：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bcdedit /set hypervisorlaunchtype off</span><br></pre></td></tr></table></figure>
+
+<p>同时附上开启命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bcdedit /set hypervisorlaunchtype auto</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="停止服务"><a href="#停止服务" class="headerlink" title="停止服务"></a>停止服务</h3><p>在service中，把和hyper-v有关的服务全部停用。<br>如图所示：<br><img src="zuo-win10.assets/abd1116d26e6ac0f260d04214b0a54f4.png" alt="停用有关服务"><br><strong>建议直接停用</strong></p>
+<hr>
+<h3 id="停用virtualization-based-security（强烈建议先尝试这一步）"><a href="#停用virtualization-based-security（强烈建议先尝试这一步）" class="headerlink" title="停用virtualization based security（强烈建议先尝试这一步）"></a>停用virtualization based security（强烈建议先尝试这一步）</h3><p>1.在Windows功能中，取消hyper-v的勾选。<strong>如果为关闭状态，无需重复</strong>。<br>这里，我说一句，我因各种尝试无效，我打算先打开，重新关闭一次，看到这个文章。我没有关闭后先重启，导致开机时自动恢复。<strong>所以先按照一般方式，先重启</strong></p>
+<p>2.管理员身份启动cmd，运行以下命令（作用是“关闭”hyper-v，<del>加引号是因为这种方法不彻底，要不就没这么麻烦了……</del> ）<strong>如果执行过，建议再执行一次，以防有变动</strong>）。<strong>之后重启</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bcdedit /set hypervisorlaunchtype off</span><br></pre></td></tr></table></figure>
+
+<p>3.最关键的一步<br><strong>一定注意：此步骤先看完再尝试，要不重启后不知道该如何操作就尴尬了</strong></p>
+<p>管理员身份运行cmd，执行以下命令。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mountvol X: /s</span><br><span class="line">copy %WINDIR%\System32\SecConfig.efi X:\EFI\Microsoft\Boot\SecConfig.efi /Y</span><br><span class="line">bcdedit /create &#123;0cb3b571-2f2e-4343-a879-d86a476d7215&#125; /d &quot;DebugTool&quot; /application osloader</span><br><span class="line">bcdedit /set &#123;0cb3b571-2f2e-4343-a879-d86a476d7215&#125; path &quot;\EFI\Microsoft\Boot\SecConfig.efi&quot;</span><br><span class="line">bcdedit /set &#123;bootmgr&#125; bootsequence &#123;0cb3b571-2f2e-4343-a879-d86a476d7215&#125;</span><br><span class="line">bcdedit /set &#123;0cb3b571-2f2e-4343-a879-d86a476d7215&#125; loadoptions DISABLE-LSA-ISO,DISABLE-VBS</span><br><span class="line">bcdedit /set &#123;0cb3b571-2f2e-4343-a879-d86a476d7215&#125; device partition=X:</span><br><span class="line">mountvol X: /d</span><br></pre></td></tr></table></figure>
+<p><strong>此处特别说明：X是指一个没有被占用的盘符。可以修改成其它满足要求的盘符，但是所有地方都必须对应</strong>。</p>
+<p>重启后，会进入一个界面。这是关闭virtualization based security的界面。一直按<code>win</code>或者<code>F3</code>，直到界面自动退出即可。</p>
+<p><strong>对我来说，至此，vbox报错信息以完全解决。</strong><br>但还有其他问题。。。</p>
+<h2 id="5-解决安卓模拟器的问题"><a href="#5-解决安卓模拟器的问题" class="headerlink" title="5.解决安卓模拟器的问题"></a>5.解决安卓模拟器的问题</h2><p>我使用的，是逍遥安卓模拟器（<strong>以下简称“模拟器”</strong>）<br>再进行一系列操作后，打开模拟器后，提醒hyper-v开启，无法运行。<del>这比vbox好，起码给你自动修复，虽然还有后遗症</del>。<br>进行了自动修复流程，重启电脑，模拟器的问题成功解决。</p>
+<h2 id="6-再次解决vbox问题"><a href="#6-再次解决vbox问题" class="headerlink" title="6.再次解决vbox问题"></a>6.再次解决vbox问题</h2><p>模拟器的问题成功解决，<strong>但vbox又回到了刚才的问题</strong>。</p>
+<p>这次解决起来比上次简单多了。不存在乱七八糟的情况。刚才那个“不对症的方法”现在正适合。具体操作看图：<br><img src="zuo-win10.assets/8b4a303169e80d6f12baf9e2f0f35224.png" alt="解决模拟器问题"></p>
+<h2 id="7-结果"><a href="#7-结果" class="headerlink" title="7.结果"></a>7.结果</h2><p>至此，此问题<strong>现在来看</strong>已经完全解决。<br>一个问题本来20分钟就能解决，走各种弯路（因为好多次查到的都是一样的对我来说无效的方法），变成了需要几个小时。因为某些原因，解决问题的事拆成了4天的零碎时间……</p>
+<h1 id="推荐"><a href="#推荐" class="headerlink" title="推荐"></a>推荐</h1><p>还有一些水文，放在csdn上，可以看看<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44027206/article/details/107603668">质数口袋c/c++版</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44027206/article/details/107501200">runtime error的常见原因及解决办法</a></p>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>感谢您的支持！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="A Mirror 微信支付">
+        <p>微信支付</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>A Mirror
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://yyxi.ml/2021/03/20/zuo-win10/" title="拿win10作死的故事">https://yyxi.ml/2021/03/20/zuo-win10/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by%20A%20Mirror/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY A MIRROR</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/windows/" rel="tag"># windows</a>
+              <a href="/tags/%E7%99%BD%E5%AB%96/" rel="tag"># 白嫖</a>
+              <a href="/tags/%E4%BD%9C%E6%AD%BB/" rel="tag"># 作死</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2021/03/21/get-nasa-ticket/" rel="next" title="nasa 船票获取成功">
+      nasa 船票获取成功 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-text">背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%85%E4%BA%8B%E5%86%85%E5%AE%B9"><span class="nav-text">故事内容</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E7%99%BD%E5%AB%96win10%E4%B8%93%E4%B8%9A%E7%89%88%E5%A4%B1%E8%B4%A5"><span class="nav-text">1.白嫖win10专业版失败</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%B0%9D%E8%AF%95%E7%94%A8%E6%BF%80%E6%B4%BB%E5%B7%A5%E5%85%B7%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98"><span class="nav-text">2.尝试用激活工具解决问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E4%BD%9C%E6%AD%BB%E9%83%A8%E5%88%86-%E6%89%93%E5%BC%80hyper-v"><span class="nav-text">3.作死部分 打开hyper-v</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E8%A7%A3%E5%86%B3vbox-0x80004005%E6%8A%A5%E9%94%99"><span class="nav-text">4.解决vbox 0x80004005报错</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%9E%90"><span class="nav-text">分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E4%B8%8D%E5%AF%B9%E7%97%87%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-text">一个不对症的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%80%E5%9F%BA%E6%9C%AC%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="nav-text">最基本的操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%9D%E8%AF%95%E5%85%BC%E5%AE%B9%E8%BF%90%E8%A1%8C%E6%A8%A1%E5%BC%8F"><span class="nav-text">尝试兼容运行模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8cmd%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%85%B3%E9%97%AD"><span class="nav-text">使用cmd命令行关闭</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%81%9C%E6%AD%A2%E6%9C%8D%E5%8A%A1"><span class="nav-text">停止服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%81%9C%E7%94%A8virtualization-based-security%EF%BC%88%E5%BC%BA%E7%83%88%E5%BB%BA%E8%AE%AE%E5%85%88%E5%B0%9D%E8%AF%95%E8%BF%99%E4%B8%80%E6%AD%A5%EF%BC%89"><span class="nav-text">停用virtualization based security（强烈建议先尝试这一步）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E8%A7%A3%E5%86%B3%E5%AE%89%E5%8D%93%E6%A8%A1%E6%8B%9F%E5%99%A8%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-text">5.解决安卓模拟器的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E5%86%8D%E6%AC%A1%E8%A7%A3%E5%86%B3vbox%E9%97%AE%E9%A2%98"><span class="nav-text">6.再次解决vbox问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E7%BB%93%E6%9E%9C"><span class="nav-text">7.结果</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8E%A8%E8%8D%90"><span class="nav-text">推荐</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">A Mirror</p>
+  <div class="site-description" itemprop="description">来自某个中学生的博客</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/jahn2007" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;jahn2007" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:tyjiahaonan2@gmail.com" title="E-Mail → mailto:tyjiahaonan2@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://t.me/freebaipiao" title="https:&#x2F;&#x2F;t.me&#x2F;freebaipiao" rel="noopener" target="_blank">freebaipiao群组</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.freebaipiao.tk/" title="https:&#x2F;&#x2F;www.freebaipiao.tk" rel="noopener" target="_blank">freebaipiao网页</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.sogou.cf/" title="https:&#x2F;&#x2F;www.sogou.cf" rel="noopener" target="_blank">简洁搜索</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">A Mirror</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  <script async src="/js/cursor/love.min.js"></script>
+
+
+ 
+<script>
+  var OriginTitile = document.title;
+  var titleTime;
+  document.addEventListener("visibilitychange", function() {
+    if (document.hidden) {
+      document.title = "抱歉，网页崩溃了！" + OriginTitile;
+      clearTimeout(titleTime);
+    } else {
+      document.title = "网页重新恢复~" + OriginTitile;
+      titleTime = setTimeout(function() {
+        document.title = OriginTitile;
+      }, 2000);
+    }
+  });
+</script>
+
+</body>
+</html>
