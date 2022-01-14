@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yyxi.ml","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="目前只有加法、乘法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="c++高精度算法">
+<meta property="og:url" content="https://yyxi.ml/2020/08/05/gaojingdu/index.html">
+<meta property="og:site_name" content="A Mirror的博客">
+<meta property="og:description" content="目前只有加法、乘法">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yyxi.ml/2020/08/05/gaojingdu/1.jpg">
+<meta property="og:image" content="https://yyxi.ml/2020/08/05/gaojingdu/2.jpg">
+<meta property="og:image" content="https://yyxi.ml/2020/08/05/gaojingdu/3.jpg">
+<meta property="og:image" content="https://yyxi.ml/2020/08/05/gaojingdu/4.jpg">
+<meta property="article:published_time" content="2020-08-05T02:29:09.000Z">
+<meta property="article:modified_time" content="2020-08-05T02:29:09.000Z">
+<meta property="article:author" content="A Mirror">
+<meta property="article:tag" content="竞赛">
+<meta property="article:tag" content="高精度">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yyxi.ml/2020/08/05/gaojingdu/1.jpg">
+
+<link rel="canonical" href="https://yyxi.ml/2020/08/05/gaojingdu/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>c++高精度算法 | A Mirror的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">A Mirror的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">不许说话不许笑 [手动滑稽]</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://yyxi.ml/2020/08/05/gaojingdu/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="A Mirror">
+      <meta itemprop="description" content="来自某个中学生的博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="A Mirror的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          c++高精度算法
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-05 10:29:09" itemprop="dateCreated datePublished" datetime="2020-08-05T10:29:09+08:00">2020-08-05</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E7%B1%BB/" itemprop="url" rel="index"><span itemprop="name">技术类</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">目前只有加法、乘法</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="什么是高精度"><a href="#什么是高精度" class="headerlink" title="什么是高精度"></a>什么是高精度</h1><p>有时，我们要做特别大数据的计算。多大呢？几百万位，<em>远远超过了long long的数据范围</em>，直接用long long肯定会<strong>溢出</strong>。这时候我们就要用高精度算法<br><em>PS：python自带高精度</em></p>
+<h1 id="所有高精度算法的基本原理"><a href="#所有高精度算法的基本原理" class="headerlink" title="所有高精度算法的基本原理"></a>所有高精度算法的基本原理</h1><p>大体的思路，就是用字符数组（因为字符数组可以达到一个下标对应一个数字，达到按位处理的目的），然后转到整形数组（整型数组才能进行计算）一个下标对应一个数字，用另一个数组进行按位相加。</p>
+<h1 id="高精度运算"><a href="#高精度运算" class="headerlink" title="高精度运算"></a>高精度运算</h1><p><strong>现在只写高精度加法、乘法。以后会逐渐补充</strong></p>
+<h2 id="加法"><a href="#加法" class="headerlink" title="加法"></a>加法</h2><h3 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h3><p>我们用数学竖式的方法来分析<br><del>别说这不是高精度，原理一样的，要不你来写个几百万位的竖式（防杠精）</del></p>
+<img src="/2020/08/05/gaojingdu/1.jpg" class="">
+<p><del>这是小学数学的知识</del> 对应位相加，有进位的加到下一位。</p>
+<p>现在，按照刚才的思路进行模拟。仍然是134+84。但存到计算机中，再按位相加，变成了这样：</p>
+<img src="/2020/08/05/gaojingdu/2.jpg" class="">
+<p>对于这种错位的情况，我们一般采取的办法是倒序存储。于是就是这样：</p>
+<img src="/2020/08/05/gaojingdu/3.jpg" class="">
+<p>就是结果也是反着的。但是没关系，我们再进行倒序输出。218，没错！</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>有了上面的说明，代码就很好懂了。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> add1=<span class="number">0</span>; <span class="comment">//专门处理最后输出时进位的问题</span></span><br><span class="line">	<span class="keyword">int</span> a[<span class="number">1000</span>]=&#123;&#125;,b[<span class="number">1000</span>]=&#123;&#125;,c[<span class="number">2000</span>]; <span class="comment">//分别对应加数1，加数2，和</span></span><br><span class="line">	<span class="keyword">char</span> a1[<span class="number">1000</span>],b1[<span class="number">1000</span>];</span><br><span class="line">	<span class="comment">//1.输入、转换</span></span><br><span class="line">	cin&gt;&gt;a1&gt;&gt;b1;</span><br><span class="line">	<span class="comment">//因位数可能不同，所以倒序存储要分两次完成</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="built_in">strlen</span>(a1);i++)&#123;</span><br><span class="line">		a[<span class="built_in">strlen</span>(a1)<span class="number">-1</span>-i]=a1[i]-<span class="string">&#x27;0&#x27;</span>; <span class="comment">//至于如何倒序存储，自己举例子思考，自行理解即可</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="built_in">strlen</span>(b1);i++)&#123;</span><br><span class="line">		b[<span class="built_in">strlen</span>(b1)<span class="number">-1</span>-i]=b1[i]-<span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//2.按位计算</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="built_in">max</span>(<span class="built_in">strlen</span>(a1),<span class="built_in">strlen</span>(b1));i++)&#123; <span class="comment">//注意要用最大长度，否则计算不完</span></span><br><span class="line">		c[i]+=a[i]+b[i]; <span class="comment">//对应位相加。要写+=是因为进位数据以提前存好，用=会丢失数据</span></span><br><span class="line">		c[i+<span class="number">1</span>]=c[i]/<span class="number">10</span>; <span class="comment">//把进位存到下一位</span></span><br><span class="line">		c[i]%=<span class="number">10</span>; <span class="comment">//把这一位模10，仅保留个位</span></span><br><span class="line">		<span class="comment">//【上边的两行顺序一定不能反，否则进位数据会丢失】</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//3.输出</span></span><br><span class="line">	<span class="comment">//因为是加法，所以和比加数的最大长度最多只会多一位，所以只需判断一次</span></span><br><span class="line">	<span class="keyword">if</span>(c[<span class="built_in">max</span>(<span class="built_in">strlen</span>(a1),<span class="built_in">strlen</span>(b1))]!=<span class="number">0</span>)&#123;</span><br><span class="line">		add1=<span class="number">1</span>; <span class="comment">//如果不是0，则说明有进位，需要多输出一次</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="built_in">max</span>(<span class="built_in">strlen</span>(a1),<span class="built_in">strlen</span>(b1))+add1<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">		cout&lt;&lt;c[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="乘法"><a href="#乘法" class="headerlink" title="乘法"></a>乘法</h2><h3 id="思路分析-1"><a href="#思路分析-1" class="headerlink" title="思路分析"></a>思路分析</h3><p>有了前边加法的基础，应该很容易想到，乘法也需要倒序存储。<br>这里我就不多说了。</p>
+<img src="/2020/08/05/gaojingdu/4.jpg" class="">
+<p>需要解释的地方如下：<br><strong>1.核心计算部分</strong><br>高精度乘法，实际上就是用加法模拟乘法。用乘法分配律就很好懂：</p>
+<blockquote>
+<p>123*45=123*(40+5)=123*40+123*5</p>
+</blockquote>
+<p>在用高精度计算时，也是一样的，只是进位处理不一样。我们用一个新的数组存储答案（这里定为c[2000]={}）==数组下标从1开始用==，c[1]+=3*5，c[1]+=2*5……，<strong>c[2]+=3*4</strong>，……<br><em>在我加粗的部分，很明显，不是从下标1开始了。原因很简单，自行列竖式理解</em><br><strong>2.处理进位部分</strong><br>这里处理进位的方法比较特殊，大体思路是把这一位除以10的结果加到下一位，并对这一位模10；下一位仍然这样，再下一位……</p>
+<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><p><strong>再强调一次，此代码数组下标是从1开始用的</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	string a1,b1;</span><br><span class="line">	<span class="keyword">int</span> a[<span class="number">2000</span>]=&#123;&#125;,b[<span class="number">2000</span>]=&#123;&#125;,c[<span class="number">5000</span>]=&#123;&#125;;</span><br><span class="line">	cin&gt;&gt;a1&gt;&gt;b1;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=a1.<span class="built_in">length</span>();i++)&#123; <span class="comment">//倒序存储</span></span><br><span class="line">		a[i]=a1[a1.<span class="built_in">length</span>()-i]-<span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=b1.<span class="built_in">length</span>();i++)&#123;</span><br><span class="line">		b[i]=b1[b1.<span class="built_in">length</span>()-i]-<span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=b1.<span class="built_in">length</span>();i++)&#123; <span class="comment">//核心计算部分，具体解释请看思路分析</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=a1.<span class="built_in">length</span>();j++)&#123;</span><br><span class="line">			c[i+j<span class="number">-1</span>]+=a[j]*b[i];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;a1.<span class="built_in">length</span>()+b1.<span class="built_in">length</span>();i++)&#123; <span class="comment">//处理进位部分，具体解释请看思路分析</span></span><br><span class="line">		<span class="keyword">if</span>(c[i]&gt;<span class="number">9</span>)&#123;</span><br><span class="line">			c[i+<span class="number">1</span>]+=c[i]/<span class="number">10</span>;</span><br><span class="line">			c[i]%=<span class="number">10</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> chu=a1.<span class="built_in">length</span>()+b1.<span class="built_in">length</span>(); <span class="comment">//用来处理多余的前导0</span></span><br><span class="line">	<span class="keyword">while</span>(c[chu]==<span class="number">0</span> &amp;&amp; chu&gt;<span class="number">1</span>)&#123; <span class="comment">//如果计算结果为0，必须保留最后一位0，所以chu必须同时&gt;1</span></span><br><span class="line">		chu--;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=chu;i&gt;=<span class="number">1</span>;i--)&#123; <span class="comment">//倒序输出，没说的</span></span><br><span class="line">		cout&lt;&lt;c[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>感谢您的支持！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="A Mirror 微信支付">
+        <p>微信支付</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>A Mirror
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://yyxi.ml/2020/08/05/gaojingdu/" title="c++高精度算法">https://yyxi.ml/2020/08/05/gaojingdu/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by%20A%20Mirror/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY A MIRROR</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%AB%9E%E8%B5%9B/" rel="tag"># 竞赛</a>
+              <a href="/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6/" rel="tag"># 高精度</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/07/29/prime/" rel="prev" title="c++素数筛法">
+      <i class="fa fa-chevron-left"></i> c++素数筛法
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/03/20/zuo-win10/" rel="next" title="拿win10作死的故事">
+      拿win10作死的故事 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E9%AB%98%E7%B2%BE%E5%BA%A6"><span class="nav-text">什么是高精度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%89%80%E6%9C%89%E9%AB%98%E7%B2%BE%E5%BA%A6%E7%AE%97%E6%B3%95%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="nav-text">所有高精度算法的基本原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%AB%98%E7%B2%BE%E5%BA%A6%E8%BF%90%E7%AE%97"><span class="nav-text">高精度运算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A0%E6%B3%95"><span class="nav-text">加法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF%E5%88%86%E6%9E%90"><span class="nav-text">思路分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B9%98%E6%B3%95"><span class="nav-text">乘法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF%E5%88%86%E6%9E%90-1"><span class="nav-text">思路分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81-1"><span class="nav-text">代码</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">A Mirror</p>
+  <div class="site-description" itemprop="description">来自某个中学生的博客</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/jahn2007" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;jahn2007" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:tyjiahaonan2@gmail.com" title="E-Mail → mailto:tyjiahaonan2@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/jahn2007" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;jahn2007" rel="noopener" target="_blank"><i class="fab fa-telegram fa-fw"></i>Telegram</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://t.me/freebaipiao" title="https:&#x2F;&#x2F;t.me&#x2F;freebaipiao" rel="noopener" target="_blank">freebaipiao群组</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.freebaipiao.tk/" title="https:&#x2F;&#x2F;www.freebaipiao.tk" rel="noopener" target="_blank">freebaipiao网页</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.sogou.cf/" title="https:&#x2F;&#x2F;www.sogou.cf" rel="noopener" target="_blank">简洁搜索</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">A Mirror</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  <script async src="/js/cursor/love.min.js"></script>
+
+
+ 
+<script>
+  var OriginTitile = document.title;
+  var titleTime;
+  document.addEventListener("visibilitychange", function() {
+    if (document.hidden) {
+      document.title = "抱歉，网页崩溃了！" + OriginTitile;
+      clearTimeout(titleTime);
+    } else {
+      document.title = "网页重新恢复~" + OriginTitile;
+      titleTime = setTimeout(function() {
+        document.title = OriginTitile;
+      }, 2000);
+    }
+  });
+</script>
+
+
+
+
+  <script src="/js/activate-power-mode.min.js"></script>
+  <script>
+    POWERMODE.colorful = true;
+    POWERMODE.shake = false;
+    document.body.addEventListener('input', POWERMODE);
+  </script>
+
+</body>
+</html>
