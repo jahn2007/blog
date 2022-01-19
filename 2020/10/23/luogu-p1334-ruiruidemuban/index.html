@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yyxi.ml","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="来自洛谷的题目 https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;problem&#x2F;P1334">
+<meta property="og:type" content="article">
+<meta property="og:title" content="洛谷P1334瑞瑞的木板题解">
+<meta property="og:url" content="https://yyxi.ml/2020/10/23/luogu-p1334-ruiruidemuban/index.html">
+<meta property="og:site_name" content="A Mirror的博客">
+<meta property="og:description" content="来自洛谷的题目 https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;problem&#x2F;P1334">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yyxi.ml/2020/10/23/luogu-p1334-ruiruidemuban/img.png">
+<meta property="article:published_time" content="2020-10-23T15:32:21.000Z">
+<meta property="article:modified_time" content="2020-10-23T15:32:21.000Z">
+<meta property="article:author" content="A Mirror">
+<meta property="article:tag" content="竞赛">
+<meta property="article:tag" content="排序">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yyxi.ml/2020/10/23/luogu-p1334-ruiruidemuban/img.png">
+
+<link rel="canonical" href="https://yyxi.ml/2020/10/23/luogu-p1334-ruiruidemuban/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>洛谷P1334瑞瑞的木板题解 | A Mirror的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">A Mirror的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">不许说话不许笑 [手动滑稽]</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://yyxi.ml/2020/10/23/luogu-p1334-ruiruidemuban/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="A Mirror">
+      <meta itemprop="description" content="来自某个中学生的博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="A Mirror的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          洛谷P1334瑞瑞的木板题解
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-10-23 23:32:21" itemprop="dateCreated datePublished" datetime="2020-10-23T23:32:21+08:00">2020-10-23</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E7%B1%BB/" itemprop="url" rel="index"><span itemprop="name">技术类</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">来自洛谷的题目 https://www.luogu.com.cn/problem/P1334</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="我做这道题的原因"><a href="#我做这道题的原因" class="headerlink" title="我做这道题的原因"></a>我做这道题的原因</h1><p>某位网友</p>
+<p>暗恋一位叫瑞瑞的女生</p>
+<p>于是我下决心AC了这道题</p>
+<p><strong>[手动滑稽]</strong></p>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p><strong>题目背景</strong></p>
+<blockquote>
+<p>瑞瑞想要亲自修复在他的一个小牧场周围的围栏。</p>
+</blockquote>
+<p><strong>题目描述</strong></p>
+<blockquote>
+<p>他测量栅栏并发现他需要n根木板，每根的长度为整数l[i]。于是，他买了一根足够长的木板，长度为所需的n根木板的长度的总和，他决定将这根木板切成所需的n根木板（瑞瑞在切割木板时不会产生木屑，不需考虑切割时损耗的长度)。<br>瑞瑞切割木板时使用的是一种特殊的方式，这种方式在将一根长度为 xx 的木板切为两根时，需要消耗x个单位的能量。瑞瑞拥有无尽的能量，但现在提倡节约能量，所以作为榜样，他决定尽可能节约能量。显然，总共需要切割(n-1)次，问题是，每次应该怎么切呢？请编程计算最少需要消耗的能量总和。</p>
+</blockquote>
+<p><strong>输入格式</strong></p>
+<blockquote>
+<p>输入的第一行是整数，表示所需木板的数量n。<br>第2行到第(n+1)行，每行一个整数，第(i+1)行的整数l[i]代表第i根木板的长度l[i]。</p>
+</blockquote>
+<p><strong>输出格式</strong></p>
+<blockquote>
+<p>一个整数，表示最少需要消耗的能量总和。</p>
+</blockquote>
+<p><strong>输入输出样例</strong></p>
+<blockquote>
+<p>输入#1<br>3<br>8<br>5<br>8<br>输出#1<br>34</p>
+</blockquote>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><h2 id="大体思路分析"><a href="#大体思路分析" class="headerlink" title="大体思路分析"></a>大体思路分析</h2><p>这道题和<em>合并果子</em>很类似。可以反着想，把几截木板组合成一整块木板。<br>先用样例来分析<br>| 8                                                            | 5    | 8    |<br>| ———————————————————— | —- | —- |</p>
+<p>如果刚开始就把大数放到一起，以后每次都会累加。所以先进行<strong>排序</strong>，把按照先小后大的顺序进行<strong>组合</strong>。</p>
+<p>排序后：<br>| 5              | 8    | 8    |<br>| ————– | —- | —- |</p>
+<p>下面开始组合。</p>
+<hr>
+<p>按先小后大的顺序进行组合：<br>| 13              | 8    |<br>| ————— | —- |</p>
+<p>此时耗费能量=13</p>
+<hr>
+<p>再次组合：<br>| 21                      |<br>| ———————– |</p>
+<p>此时耗费能量=13+13+8=34</p>
+<h2 id="向代码转换"><a href="#向代码转换" class="headerlink" title="向代码转换"></a>向代码转换</h2><p>此样例只有3个数，存在特殊情况。最好用更多的数据进行分析。<strong>这里用2 1 9 4</strong></p>
+<p>每次组合所耗费能量=组合后的木板长度</p>
+<p>那就可以先对数据进行排序，选取最小的2个进行组合，再排序，再组合……</p>
+<img src="/2020/10/23/luogu-p1334-ruiruidemuban/img.png" class="">
+<h1 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> a,<span class="keyword">long</span> <span class="keyword">long</span> b)</span></span>&#123; <span class="comment">//大到小排序 </span></span><br><span class="line">	<span class="keyword">return</span> a&gt;b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> l[<span class="number">25000</span>],ans=<span class="number">0</span>; <span class="comment">//木板长度，答案 </span></span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		cin&gt;&gt;l[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">sort</span>(l,l+n,cmp);<span class="comment">//先排序 </span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=n<span class="number">-1</span>,a=<span class="number">0</span>;i&gt;<span class="number">0</span>;i--,a++)&#123;</span><br><span class="line">		l[i<span class="number">-1</span>]+=l[i];</span><br><span class="line">		ans+=l[i<span class="number">-1</span>];</span><br><span class="line">		<span class="keyword">int</span> j=i<span class="number">-1</span>;</span><br><span class="line">		<span class="keyword">while</span>(l[j]&gt;l[j<span class="number">-1</span>] &amp;&amp; j&gt;<span class="number">0</span>)&#123;</span><br><span class="line">			<span class="built_in">swap</span>(l[j],l[j<span class="number">-1</span>]);</span><br><span class="line">			j--;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;ans;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>感谢您的支持！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="A Mirror 微信支付">
+        <p>微信支付</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>A Mirror
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://yyxi.ml/2020/10/23/luogu-p1334-ruiruidemuban/" title="洛谷P1334瑞瑞的木板题解">https://yyxi.ml/2020/10/23/luogu-p1334-ruiruidemuban/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by%20A%20Mirror/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY A MIRROR</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%AB%9E%E8%B5%9B/" rel="tag"># 竞赛</a>
+              <a href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag"># 排序</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/10/19/luogu-p1076-quanpailiewenti/" rel="prev" title="洛谷P1076全排列问题题解">
+      <i class="fa fa-chevron-left"></i> 洛谷P1076全排列问题题解
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/03/20/zuo-win10/" rel="next" title="拿win10作死的故事">
+      拿win10作死的故事 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">A Mirror</p>
+  <div class="site-description" itemprop="description">来自某个中学生的博客</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/jahn2007" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;jahn2007" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:tyjiahaonan2@gmail.com" title="E-Mail → mailto:tyjiahaonan2@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/jahn2007" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;jahn2007" rel="noopener" target="_blank"><i class="fab fa-telegram fa-fw"></i>Telegram</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://t.me/freebaipiao" title="https:&#x2F;&#x2F;t.me&#x2F;freebaipiao" rel="noopener" target="_blank">freebaipiao群组</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.freebaipiao.tk/" title="https:&#x2F;&#x2F;www.freebaipiao.tk" rel="noopener" target="_blank">freebaipiao网页</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.sogou.cf/" title="https:&#x2F;&#x2F;www.sogou.cf" rel="noopener" target="_blank">简洁搜索</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">A Mirror</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  <script async src="/js/cursor/love.min.js"></script>
+
+
+ 
+<script>
+  var OriginTitile = document.title;
+  var titleTime;
+  document.addEventListener("visibilitychange", function() {
+    if (document.hidden) {
+      document.title = "抱歉，网页崩溃了！" + OriginTitile;
+      clearTimeout(titleTime);
+    } else {
+      document.title = "网页重新恢复~" + OriginTitile;
+      titleTime = setTimeout(function() {
+        document.title = OriginTitile;
+      }, 2000);
+    }
+  });
+</script>
+
+
+
+
+  <script src="/js/activate-power-mode.min.js"></script>
+  <script>
+    POWERMODE.colorful = true;
+    POWERMODE.shake = false;
+    document.body.addEventListener('input', POWERMODE);
+  </script>
+
+</body>
+</html>
