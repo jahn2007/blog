@@ -222,7 +222,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="提问一"><a href="#提问一" class="headerlink" title="提问一"></a>提问一</h1><p>当时正在讲实验室制氧气。装置如下图所示</p>
+        <p>$UPDATE：$</p>
+<p>$FEB.23rd \ 2022:Add\ 2\ new\ converciations$</p>
+<h1 id="提问一"><a href="#提问一" class="headerlink" title="提问一"></a>提问一</h1><p>当时正在讲实验室制氧气。装置如下图所示</p>
 <img src="/2021/12/23/grade9-new-class-funny-2/image-20211223133129997.png" class="">
 
 <p>某提问同学（A）、另一位同学（B）、我（ME）、老师（T）的对话如下：</p>
@@ -234,7 +236,7 @@
 
 <p>当时讲到了这里，某位同学：</p>
 <blockquote>
-<p>为什么不是纳化氯</p>
+<p>为什么不是钠化氯</p>
 </blockquote>
 <p>太神奇了。。。</p>
 <h1 id="提问三"><a href="#提问三" class="headerlink" title="提问三"></a>提问三</h1><p>自习课上，我的同桌：</p>
@@ -243,7 +245,30 @@
 </blockquote>
 <p>对于这个问题，某同学的回答很<strong>直接明了</strong></p>
 <blockquote>
-<p>NaCl和H2SO4混合起来就是盐酸</p>
+<p>$NaCl$ 和 $H_2SO_4$ 混合起来就是盐酸</p>
+</blockquote>
+<h1 id="提问四"><a href="#提问四" class="headerlink" title="提问四"></a>提问四</h1><p>看着那张酸碱盐溶解性的表格，我的同桌指着 $H_2SO_4$</p>
+<blockquote>
+<p>她：这是啥？</p>
+<p>我：你看这像啥</p>
+<p>她：硫酸？</p>
+<p>我：嗯。。。</p>
+</blockquote>
+<p>然后指着 $HCl$</p>
+<blockquote>
+<p>她：这又是啥？</p>
+<p>我：你自己看呢？</p>
+<p>她：氯酸？</p>
+<p>我：。。。</p>
+</blockquote>
+<p>继续指着 $HNO_3$：</p>
+<blockquote>
+<p>这是啥？氮酸？</p>
+</blockquote>
+<p>的确啊，拓展班的化学课都可以创新了</p>
+<h1 id="提问五"><a href="#提问五" class="headerlink" title="提问五"></a>提问五</h1><p>讲pH试纸的用法，问：</p>
+<blockquote>
+<p>试纸是不是纸？</p>
 </blockquote>
 
     </div>
@@ -509,6 +534,63 @@
 
 
   
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 

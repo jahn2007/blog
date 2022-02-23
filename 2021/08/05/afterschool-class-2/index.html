@@ -33,8 +33,8 @@
 <meta property="article:published_time" content="2021-08-05T09:06:00.000Z">
 <meta property="article:modified_time" content="2021-08-05T09:06:00.000Z">
 <meta property="article:author" content="A Mirror">
-<meta property="article:tag" content="趣事">
 <meta property="article:tag" content="课外班">
+<meta property="article:tag" content="趣事">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://yyxi.ml/2021/08/05/afterschool-class-2/">
@@ -261,8 +261,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E8%B6%A3%E4%BA%8B/" rel="tag"># 趣事</a>
               <a href="/tags/%E8%AF%BE%E5%A4%96%E7%8F%AD/" rel="tag"># 课外班</a>
+              <a href="/tags/%E8%B6%A3%E4%BA%8B/" rel="tag"># 趣事</a>
           </div>
 
         
@@ -484,6 +484,63 @@
 
 
   
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
