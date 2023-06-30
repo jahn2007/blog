@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yyxi.ml","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="不同平台，在线试听、下载、元数据、歌词匹配">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于音乐的那些事">
+<meta property="og:url" content="https://yyxi.ml/2023/06/30/download-musics/index.html">
+<meta property="og:site_name" content="A Mirror的博客">
+<meta property="og:description" content="不同平台，在线试听、下载、元数据、歌词匹配">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yyxi.ml/2023/06/30/download-musics/image-20230629153755928.png">
+<meta property="og:image" content="https://yyxi.ml/2023/06/30/download-musics/image-20230629154642494.png">
+<meta property="og:image" content="https://yyxi.ml/2023/06/30/download-musics/image-20230629155847617.png">
+<meta property="og:image" content="https://yyxi.ml/2023/06/30/download-musics/image-20230621093345413.png">
+<meta property="og:image" content="https://yyxi.ml/2023/06/30/download-musics/image-20230621094132254.png">
+<meta property="og:image" content="https://yyxi.ml/2023/06/30/download-musics/image-20230621094336248.png">
+<meta property="og:image" content="https://yyxi.ml/2023/06/30/download-musics/2023-06-21_09-44-27_656.jpg">
+<meta property="og:image" content="https://yyxi.ml/2023/06/30/download-musics/image-20230629151901137.png">
+<meta property="article:published_time" content="2023-06-30T11:07:43.000Z">
+<meta property="article:modified_time" content="2023-06-30T11:07:43.000Z">
+<meta property="article:author" content="A Mirror">
+<meta property="article:tag" content="windows">
+<meta property="article:tag" content="音乐">
+<meta property="article:tag" content="网站">
+<meta property="article:tag" content="安卓">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yyxi.ml/2023/06/30/download-musics/image-20230629153755928.png">
+
+<link rel="canonical" href="https://yyxi.ml/2023/06/30/download-musics/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>关于音乐的那些事 | A Mirror的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">A Mirror的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">不许说话不许笑 [手动滑稽]</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">31</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">6</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">53</span></a>
+
+  </li>
+        <li class="menu-item menu-item-note">
+
+    <a href="/note/" rel="section"><i class="fas fa-sticky-note fa-fw"></i>note</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://yyxi.ml/2023/06/30/download-musics/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/apple-touch-icon-next.png">
+      <meta itemprop="name" content="A Mirror">
+      <meta itemprop="description" content="来自某个中学生的博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="A Mirror的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          关于音乐的那些事
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-06-30 19:07:43" itemprop="dateCreated datePublished" datetime="2023-06-30T19:07:43+08:00">2023-06-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%86%E4%BA%AB-%E5%85%B6%E5%AE%83/" itemprop="url" rel="index"><span itemprop="name">分享, 其它</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">不同平台，在线试听、下载、元数据、歌词匹配</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="试听、下载相关的话题"><a href="#试听、下载相关的话题" class="headerlink" title="试听、下载相关的话题"></a>试听、下载相关的话题</h1><h2 id="网站篇"><a href="#网站篇" class="headerlink" title="网站篇"></a>网站篇</h2><h3 id="zz123"><a href="#zz123" class="headerlink" title="zz123"></a>zz123</h3><img src="/2023/06/30/download-musics/image-20230629153755928.png" class="">
+
+<h4 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h4><p>可搜索歌曲，并有详细的歌曲分类</p>
+<p>未登录状态：在线试听</p>
+<p>登录状态：可下载（测试了几首，全部为128kbps）,但无法下载歌词，无元数据</p>
+<h4 id="网址"><a href="#网址" class="headerlink" title="网址"></a>网址</h4><p><a target="_blank" rel="noopener" href="https://zz123.com/">https://zz123.com</a></p>
+<h3 id="放屁网"><a href="#放屁网" class="headerlink" title="放屁网"></a>放屁网</h3><img src="/2023/06/30/download-musics/image-20230629154642494.png" class="">
+
+<h4 id="功能-1"><a href="#功能-1" class="headerlink" title="功能"></a>功能</h4><p>搜索、下载歌曲、歌词，但音频文件无自动内嵌元数据</p>
+<h4 id="网址-1"><a href="#网址-1" class="headerlink" title="网址"></a>网址</h4><p><a target="_blank" rel="noopener" href="https://www.fangpi.net/">https://www.fangpi.net</a></p>
+<h3 id="刘明野的工具箱——MyFreeMP3"><a href="#刘明野的工具箱——MyFreeMP3" class="headerlink" title="刘明野的工具箱——MyFreeMP3"></a>刘明野的工具箱——MyFreeMP3</h3><img src="/2023/06/30/download-musics/image-20230629155847617.png" class="">
+
+<h4 id="功能-2"><a href="#功能-2" class="headerlink" title="功能"></a>功能</h4><p>在线搜索、试听，可下载不同码率的音频文件<strong>（含无损）</strong>，同时可选择下载封面、歌词</p>
+<h4 id="网址-2"><a href="#网址-2" class="headerlink" title="网址"></a>网址</h4><p><a target="_blank" rel="noopener" href="https://tool.liumingye.cn/music">https://tool.liumingye.cn/music</a></p>
+<h3 id="一类网站：社区网站"><a href="#一类网站：社区网站" class="headerlink" title="一类网站：社区网站"></a>一类网站：社区网站</h3><h4 id="付费"><a href="#付费" class="headerlink" title="付费"></a>付费</h4><p>例如：<a target="_blank" rel="noopener" href="https://wenanb.com/">https://wenanb.com</a> <a target="_blank" rel="noopener" href="https://60yp.com/">https://60yp.com</a></p>
+<p>优点：所有资源都为人工整理，成套发布，节约时间</p>
+<p>缺点：要钱！！！（但是有便宜的，10cny这种）。不可能所有音乐都能在这类网站上找到，且有时更新不及时。使用网盘发布资源，下载时需要一些“手段”来“优化”</p>
+<h4 id="免费"><a href="#免费" class="headerlink" title="免费"></a>免费</h4><p>例如：<a target="_blank" rel="noopener" href="https://www.xmwav.com/">https://www.xmwav.com</a> <a target="_blank" rel="noopener" href="https://hifini.com/">https://hifini.com</a></p>
+<p>缺点：需要自行辨别内容，其它同上</p>
+<p><strong>注意：hijini网站自动签到脚本：<a target="_blank" rel="noopener" href="https://github.com/Xramas/HiFiNi-Auto-Sign">https://github.com/Xramas/HiFiNi-Auto-Sign</a></strong></p>
+<h2 id="windows篇"><a href="#windows篇" class="headerlink" title="windows篇"></a>windows篇</h2><h3 id="洛雪音乐"><a href="#洛雪音乐" class="headerlink" title="洛雪音乐"></a>洛雪音乐</h3><img src="/2023/06/30/download-musics/image-20230621093345413.png" class="">
+
+<h4 id="功能-3"><a href="#功能-3" class="headerlink" title="功能"></a>功能</h4><p>酷我、酷狗、QQ、网易云、咪咕5大平台音乐搜索、下载，可自动下载和嵌入歌词、封面、元数据、歌词翻译和罗马音，<strong>但无法下载无损音质，仅有128kbps</strong>。支持歌单搜索和导入</p>
+<h4 id="使用前推荐进行以下设置"><a href="#使用前推荐进行以下设置" class="headerlink" title="使用前推荐进行以下设置"></a>使用前推荐进行以下设置</h4><p>1.打开下载功能</p>
+<img src="/2023/06/30/download-musics/image-20230621094132254.png" class="">
+
+<p>2.打开歌词下载</p>
+<img src="/2023/06/30/download-musics/image-20230621094336248.png" class="">
+
+<p>3.将接口改为“测试接口”，将音源显示改变原名</p>
+<img src="/2023/06/30/download-musics/2023-06-21_09-44-27_656.jpg" class="">
+
+<p>4.打开歌词翻译、高品质音乐播放<strong>（播放，非下载）</strong></p>
+
+
+<h4 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h4><p><a target="_blank" rel="noopener" href="https://github.com/lyswhut/lx-music-desktop">https://github.com/lyswhut/lx-music-desktop</a></p>
+<h3 id="魔音"><a href="#魔音" class="headerlink" title="魔音"></a>魔音</h3><img src="/2023/06/30/download-musics/image-20230629151901137.png" class="">
+
+<h4 id="功能-4"><a href="#功能-4" class="headerlink" title="功能"></a>功能</h4><p>网易云、酷我、酷狗3大平台的搜索、下载。理论还支持所有平台的mv观看、下载和酷我平台的无损下载，但现在软件win版正在重构（论坛中有相关说明），暂不支持。</p>
+<p>下载时会自动下载歌词和专辑封面，但歌词在音频文件目录下的子目录当中。同时，不会自动嵌入元数据。</p>
+<p>同时，可自行添加本地目录，播放本地歌曲</p>
+<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><p>若出现获取到音频信息无法播放的情况，请在windows功能中，启用windows media player</p>
+<h4 id="下载地址-1"><a href="#下载地址-1" class="headerlink" title="下载地址"></a>下载地址</h4><p><a target="_blank" rel="noopener" href="http://morin.vin/">http://morin.vin</a></p>
+<h3 id="listen1"><a href="#listen1" class="headerlink" title="listen1"></a>listen1</h3><h4 id="功能-5"><a href="#功能-5" class="headerlink" title="功能"></a>功能</h4><p>网易云、QQ、酷狗、酷我、bilibili、咪咕、千千7大平台的搜索与在线试听，<strong>似乎不支持下载</strong></p>
+<h4 id="下载地址-2"><a href="#下载地址-2" class="headerlink" title="下载地址"></a>下载地址</h4><p><a target="_blank" rel="noopener" href="https://github.com/listen1">https://github.com/listen1</a></p>
+<h2 id="安卓篇"><a href="#安卓篇" class="headerlink" title="安卓篇"></a>安卓篇</h2><h3 id="listen1-1"><a href="#listen1-1" class="headerlink" title="listen1"></a>listen1</h3><p>同windows部分</p>
+<h3 id="洛雪音乐-1"><a href="#洛雪音乐-1" class="headerlink" title="洛雪音乐"></a>洛雪音乐</h3><p>同windows部分</p>
+<p>部分功能不同</p>
+<h3 id="魔音-1"><a href="#魔音-1" class="headerlink" title="魔音"></a>魔音</h3><p>同windows部分</p>
+<h2 id="mac篇"><a href="#mac篇" class="headerlink" title="mac篇"></a>mac篇</h2><h3 id="洛雪音乐-2"><a href="#洛雪音乐-2" class="headerlink" title="洛雪音乐"></a>洛雪音乐</h3><p>同windows部分</p>
+<h3 id="listen1-2"><a href="#listen1-2" class="headerlink" title="listen1"></a>listen1</h3><p>同windows部分</p>
+<h1 id="元数据相关的话题"><a href="#元数据相关的话题" class="headerlink" title="元数据相关的话题"></a>元数据相关的话题</h1><h2 id="元数据是什么"><a href="#元数据是什么" class="headerlink" title="元数据是什么"></a>元数据是什么</h2><p>存储文件相关属性的信息。</p>
+<p>音频元数据通常包括：音乐名称、类型、评级、内容、描述、艺术家、流派、标题、标签、专辑名称等</p>
+<h2 id="元数据的作用"><a href="#元数据的作用" class="headerlink" title="元数据的作用"></a>元数据的作用</h2><p>对于创作者，起保护版权的作用。对听众，可以使音乐的收集更加合理、有序、规范。</p>
+<h2 id="元数据如何更改"><a href="#元数据如何更改" class="headerlink" title="元数据如何更改"></a>元数据如何更改</h2><h3 id="mp3tag"><a href="#mp3tag" class="headerlink" title="mp3tag"></a>mp3tag</h3><p><a target="_blank" rel="noopener" href="https://www.mp3tag.de/">https://www.mp3tag.de</a></p>
+<p>可手动更改</p>
+<p>如果要实现自动网络搜索匹配，需要自行配置数据源。在有更好的选择的情况下，不建议使用此方法</p>
+<h3 id="music-tag（同时支持win，android）"><a href="#music-tag（同时支持win，android）" class="headerlink" title="music tag（同时支持win，android）"></a>music tag（同时支持win，android）</h3><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/vinlxc">https://www.cnblogs.com/vinlxc</a></p>
+<p>可实现自动匹配元数据和歌词</p>
+<p>图片源建议使用iTunes，清晰度较高</p>
+<h1 id="歌词相关的话题"><a href="#歌词相关的话题" class="headerlink" title="歌词相关的话题"></a>歌词相关的话题</h1><h2 id="外挂歌词和内嵌歌词"><a href="#外挂歌词和内嵌歌词" class="headerlink" title="外挂歌词和内嵌歌词"></a>外挂歌词和内嵌歌词</h2><p>外挂歌词：lrc文件与音频文件同名，且存在于同一目录之下。播放歌曲时，播放器通常会自动在音频文件目录下搜索同名歌词文件</p>
+<p>内嵌歌词：以元数据的形式存在</p>
+<h2 id="歌词自动匹配"><a href="#歌词自动匹配" class="headerlink" title="歌词自动匹配"></a>歌词自动匹配</h2><p>可使用music tag</p>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>感谢您的支持！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="A Mirror 微信支付">
+        <p>微信支付</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>A Mirror
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://yyxi.ml/2023/06/30/download-musics/" title="关于音乐的那些事">https://yyxi.ml/2023/06/30/download-musics/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by%20A%20Mirror/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY A MIRROR</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/windows/" rel="tag"># windows</a>
+              <a href="/tags/%E9%9F%B3%E4%B9%90/" rel="tag"># 音乐</a>
+              <a href="/tags/%E7%BD%91%E7%AB%99/" rel="tag"># 网站</a>
+              <a href="/tags/%E5%AE%89%E5%8D%93/" rel="tag"># 安卓</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/06/08/diary-2023-6-8/" rel="prev" title="用代码描述好感、喜欢和爱">
+      <i class="fa fa-chevron-left"></i> 用代码描述好感、喜欢和爱
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%95%E5%90%AC%E3%80%81%E4%B8%8B%E8%BD%BD%E7%9B%B8%E5%85%B3%E7%9A%84%E8%AF%9D%E9%A2%98"><span class="nav-text">试听、下载相关的话题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E7%AB%99%E7%AF%87"><span class="nav-text">网站篇</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#zz123"><span class="nav-text">zz123</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD"><span class="nav-text">功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BD%91%E5%9D%80"><span class="nav-text">网址</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%94%BE%E5%B1%81%E7%BD%91"><span class="nav-text">放屁网</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD-1"><span class="nav-text">功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BD%91%E5%9D%80-1"><span class="nav-text">网址</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%98%E6%98%8E%E9%87%8E%E7%9A%84%E5%B7%A5%E5%85%B7%E7%AE%B1%E2%80%94%E2%80%94MyFreeMP3"><span class="nav-text">刘明野的工具箱——MyFreeMP3</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD-2"><span class="nav-text">功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BD%91%E5%9D%80-2"><span class="nav-text">网址</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E7%B1%BB%E7%BD%91%E7%AB%99%EF%BC%9A%E7%A4%BE%E5%8C%BA%E7%BD%91%E7%AB%99"><span class="nav-text">一类网站：社区网站</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%98%E8%B4%B9"><span class="nav-text">付费</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%8D%E8%B4%B9"><span class="nav-text">免费</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#windows%E7%AF%87"><span class="nav-text">windows篇</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B4%9B%E9%9B%AA%E9%9F%B3%E4%B9%90"><span class="nav-text">洛雪音乐</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD-3"><span class="nav-text">功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%89%8D%E6%8E%A8%E8%8D%90%E8%BF%9B%E8%A1%8C%E4%BB%A5%E4%B8%8B%E8%AE%BE%E7%BD%AE"><span class="nav-text">使用前推荐进行以下设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80"><span class="nav-text">下载地址</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AD%94%E9%9F%B3"><span class="nav-text">魔音</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD-4"><span class="nav-text">功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F"><span class="nav-text">注意</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80-1"><span class="nav-text">下载地址</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#listen1"><span class="nav-text">listen1</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD-5"><span class="nav-text">功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80-2"><span class="nav-text">下载地址</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E5%8D%93%E7%AF%87"><span class="nav-text">安卓篇</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#listen1-1"><span class="nav-text">listen1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B4%9B%E9%9B%AA%E9%9F%B3%E4%B9%90-1"><span class="nav-text">洛雪音乐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AD%94%E9%9F%B3-1"><span class="nav-text">魔音</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mac%E7%AF%87"><span class="nav-text">mac篇</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B4%9B%E9%9B%AA%E9%9F%B3%E4%B9%90-2"><span class="nav-text">洛雪音乐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#listen1-2"><span class="nav-text">listen1</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%83%E6%95%B0%E6%8D%AE%E7%9B%B8%E5%85%B3%E7%9A%84%E8%AF%9D%E9%A2%98"><span class="nav-text">元数据相关的话题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%83%E6%95%B0%E6%8D%AE%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-text">元数据是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%83%E6%95%B0%E6%8D%AE%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-text">元数据的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%83%E6%95%B0%E6%8D%AE%E5%A6%82%E4%BD%95%E6%9B%B4%E6%94%B9"><span class="nav-text">元数据如何更改</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#mp3tag"><span class="nav-text">mp3tag</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#music-tag%EF%BC%88%E5%90%8C%E6%97%B6%E6%94%AF%E6%8C%81win%EF%BC%8Candroid%EF%BC%89"><span class="nav-text">music tag（同时支持win，android）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AD%8C%E8%AF%8D%E7%9B%B8%E5%85%B3%E7%9A%84%E8%AF%9D%E9%A2%98"><span class="nav-text">歌词相关的话题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%96%E6%8C%82%E6%AD%8C%E8%AF%8D%E5%92%8C%E5%86%85%E5%B5%8C%E6%AD%8C%E8%AF%8D"><span class="nav-text">外挂歌词和内嵌歌词</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%8C%E8%AF%8D%E8%87%AA%E5%8A%A8%E5%8C%B9%E9%85%8D"><span class="nav-text">歌词自动匹配</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="A Mirror"
+      src="/images/apple-touch-icon-next.png">
+  <p class="site-author-name" itemprop="name">A Mirror</p>
+  <div class="site-description" itemprop="description">来自某个中学生的博客</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/jahn2007" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;jahn2007" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:tyjiahaonan2@gmail.com" title="E-Mail → mailto:tyjiahaonan2@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/jahn2007" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;jahn2007" rel="noopener" target="_blank"><i class="fab fa-telegram fa-fw"></i>Telegram</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://t.me/freebaipiao" title="https:&#x2F;&#x2F;t.me&#x2F;freebaipiao" rel="noopener" target="_blank">freebaipiao频道</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.freebaipiao.tk/" title="https:&#x2F;&#x2F;www.freebaipiao.tk" rel="noopener" target="_blank">freebaipiao网页</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://t.me/qwzyfenxiang" title="https:&#x2F;&#x2F;t.me&#x2F;qwzyfenxiang" rel="noopener" target="_blank">全网资源分享频道</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://jiasswee.eu.org/" title="https:&#x2F;&#x2F;jiasswee.eu.org" rel="noopener" target="_blank">jiasswee的博客</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.sogou.cf/" title="https:&#x2F;&#x2F;www.sogou.cf" rel="noopener" target="_blank">简洁搜索</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">A Mirror</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+  
+
+  <script async src="/js/cursor/love.min.js"></script>
+
+
+ 
+<script>
+  var OriginTitile = document.title;
+  var titleTime;
+  document.addEventListener("visibilitychange", function() {
+    if (document.hidden) {
+      document.title = "抱歉，网页崩溃了！" + OriginTitile;
+      clearTimeout(titleTime);
+    } else {
+      document.title = "网页重新恢复~" + OriginTitile;
+      titleTime = setTimeout(function() {
+        document.title = OriginTitile;
+      }, 2000);
+    }
+  });
+</script>
+
+
+
+
+  <script src="/js/activate-power-mode.min.js"></script>
+  <script>
+    POWERMODE.colorful = true;
+    POWERMODE.shake = false;
+    document.body.addEventListener('input', POWERMODE);
+  </script>
+<script src="/js/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '64px',
+  right: 'unset',
+  left: '32px',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: true,
+  label: '🌓',
+  autoMatchOsTheme: true
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+</script>
+
+</body>
+</html>
