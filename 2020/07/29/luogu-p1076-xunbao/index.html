@@ -20,13 +20,13 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yyxi.ml","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"www.amirror.top","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="来自洛谷的题目 https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;problem&#x2F;P1076">
 <meta property="og:type" content="article">
 <meta property="og:title" content="洛谷P1076寻宝题解">
-<meta property="og:url" content="https://yyxi.ml/2020/07/29/luogu-p1076-xunbao/index.html">
+<meta property="og:url" content="https://www.amirror.top/2020/07/29/luogu-p1076-xunbao/index.html">
 <meta property="og:site_name" content="A Mirror的博客">
 <meta property="og:description" content="来自洛谷的题目 https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;problem&#x2F;P1076">
 <meta property="og:locale" content="zh_CN">
@@ -39,7 +39,7 @@
 <meta property="article:tag" content="统计">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://yyxi.ml/2020/07/29/luogu-p1076-xunbao/">
+<link rel="canonical" href="https://www.amirror.top/2020/07/29/luogu-p1076-xunbao/">
 
 
 <script id="page-configurations">
@@ -132,17 +132,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">31</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">32</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">6</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">5</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">53</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">54</span></a>
 
   </li>
         <li class="menu-item menu-item-note">
@@ -179,7 +179,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://yyxi.ml/2020/07/29/luogu-p1076-xunbao/">
+    <link itemprop="mainEntityOfPage" href="https://www.amirror.top/2020/07/29/luogu-p1076-xunbao/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/apple-touch-icon-next.png">
@@ -252,10 +252,10 @@
 <hr>
 <p>后来思考了一下，有可能一层楼有100个房间，但牌子上数字是10001。<strong>把10001对100取余</strong>可以把10001次循环减少成1次循环，<del>虽然这个例子好像有点极端</del>。<br><em>这个新代码的思路一样，所以我只写出最核心的部分</em></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">	<span class="keyword">int</span> ltjs=<span class="number">0</span>,ltzs=<span class="number">0</span>; <span class="comment">//ltjs是记录走过的楼梯数量 ltzs是先算出这一层有楼梯房间的总数，取余时用</span></span><br><span class="line">	p+=b[i][start];</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;m;j++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(a[i][j]==<span class="number">1</span>)&#123;</span><br><span class="line">			ltzs++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;<span class="number">0</span>==<span class="number">0</span>;j++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(a[i][(start+j)%m]==<span class="number">1</span>)&#123;</span><br><span class="line">			ltjs++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(ltjs==b[i][start]%ltzs+ltzs)&#123; <span class="comment">//至于为什么要再加一个ltzs，在下文解释。</span></span><br><span class="line">			start=(start+j)%m;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><em>下面来解释一下代码注释中卖的关子</em>：如果取余的结果正好为0，但是当前房间还没有通往上层的楼梯，程序也不会执行，就会出现错误。当然，<strong>单独判断</strong>也可以。<br>还有，我把三维数组<code>a[10000][100][2]</code>改成了<code>a[10000][100]</code>和<code>b[10000][100]</code>，分别用来存储是否有通往上层的楼梯和牌子上的数字，因为数组开太大而出现了RE，详细说明请看这篇文章，<a href="https://yyxi.ml/2020/07/22/luogu-re-error/">点击查看</a></p>
+<p><em>下面来解释一下代码注释中卖的关子</em>：如果取余的结果正好为0，但是当前房间还没有通往上层的楼梯，程序也不会执行，就会出现错误。当然，<strong>单独判断</strong>也可以。<br>还有，我把三维数组<code>a[10000][100][2]</code>改成了<code>a[10000][100]</code>和<code>b[10000][100]</code>，分别用来存储是否有通往上层的楼梯和牌子上的数字，因为数组开太大而出现了RE，详细说明请看这篇文章，<a target="_blank" rel="noopener" href="https://yyxi.ml/2020/07/22/luogu-re-error/">点击查看</a></p>
 <h1 id="完整AC代码"><a href="#完整AC代码" class="headerlink" title="完整AC代码"></a>完整AC代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> n,m;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> p=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> a[<span class="number">10000</span>][<span class="number">100</span>],b[<span class="number">10000</span>][<span class="number">100</span>],start;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;m;j++)&#123;</span><br><span class="line"><span class="comment">//			cin&gt;&gt;a[i][j][0]&gt;&gt;a[i][j][1];</span></span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>, &amp;a[i][j],&amp;b[i][j]);</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	cin&gt;&gt;start;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		<span class="keyword">int</span> ltjs=<span class="number">0</span>,ltzs=<span class="number">0</span>;</span><br><span class="line">		p+=b[i][start];</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;m;j++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(a[i][j]==<span class="number">1</span>)&#123;</span><br><span class="line">				ltzs++;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;<span class="number">0</span>==<span class="number">0</span>;j++)&#123;</span><br><span class="line">							</span><br><span class="line">			<span class="comment">//j=1</span></span><br><span class="line">			<span class="keyword">if</span>(a[i][(start+j)%m]==<span class="number">1</span>)&#123;</span><br><span class="line">				ltjs++;</span><br><span class="line"></span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(ltjs==b[i][start]%ltzs+ltzs)&#123;</span><br><span class="line">				start=(start+j)%m;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="comment">//	cout&lt;&lt;p%20123;</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,p%<span class="number">20123</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>推荐阅读：洛谷P5723质数口袋题解，<a href="https://yyxi.ml/2020/07/23/luogu-p5723-zhishukoudai/">点击查看</a></p>
+<p>推荐阅读：洛谷P5723质数口袋题解，<a target="_blank" rel="noopener" href="https://yyxi.ml/2020/07/23/luogu-p5723-zhishukoudai/">点击查看</a></p>
 
     </div>
 
@@ -286,7 +286,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://yyxi.ml/2020/07/29/luogu-p1076-xunbao/" title="洛谷P1076寻宝题解">https://yyxi.ml/2020/07/29/luogu-p1076-xunbao/</a>
+    <a href="https://www.amirror.top/2020/07/29/luogu-p1076-xunbao/" title="洛谷P1076寻宝题解">https://www.amirror.top/2020/07/29/luogu-p1076-xunbao/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by%20A%20Mirror/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY A MIRROR</a> 许可协议。转载请注明出处！
@@ -389,20 +389,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-count">54</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-count">32</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
